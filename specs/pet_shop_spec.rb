@@ -120,12 +120,13 @@ class TestPetShop < Minitest::Test
   #   pets = pets_by_breed(@pet_shop, "British Shorthair")
   #   assert_equal(2, pets.count)
   # end
-
+  #
   # def test_all_pets_by_breed__not_found
   #   pets = pets_by_breed(@pet_shop, "Dalmation")
   #   assert_equal(0, pets.count)
   # end
 
+## Cannot seem to pass this test -  no implicit conversion of Symbol into Integer on ln138
   # def test_find_pet_by_name__returns_pet
   #   pet = find_pet_by_name(@pet_shop, "Arthur")
   #   assert_equal("Arthur", pet[:name])
@@ -172,17 +173,17 @@ class TestPetShop < Minitest::Test
 
   # --- OPTIONAL ---
 
-  # def test_customer_can_afford_pet__sufficient_funds
-  #   customer = @customers[0]
-  #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-  #   assert_equal(true, can_buy_pet)
-  # end
+  def test_customer_can_afford_pet__sufficient_funds
+    customer = @customers[0]
+    can_buy_pet = customer_can_afford_pet(customer, @new_pet)
+    assert_equal(true, can_buy_pet)
+  end
 
-  # def test_customer_can_afford_pet__insufficient_funds
-  #   customer = @customers[1]
-  #   can_buy_pet = customer_can_afford_pet(customer, @new_pet)
-  #   assert_equal(false, can_buy_pet)
-  # end
+  def test_customer_can_afford_pet__insufficient_funds
+    customer = @customers[1]
+    can_buy_pet = customer_can_afford_pet(customer, @new_pet)
+    assert_equal(false, can_buy_pet)
+  end
 
   # def test_customer_can_afford_pet__exact_funds
   #   customer = @customers[2]
