@@ -79,7 +79,7 @@ def customer_can_afford_pet(customer_number, new_pet)
 end
 
 def sell_pet_to_customer(pet_shop, pet, customer_number)
-  if pet != nil && if customer_can_afford_pet(customer_number)
+  if pet != nil && if customer_can_afford_pet(customer_number, pet)
     add_pet_to_customer(customer_number, pet)
       customer_pet_count(customer_number)
     increase_pets_sold(pet_shop, 1)
