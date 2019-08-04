@@ -35,17 +35,13 @@ def pets_by_breed(pet_shop, breed)
 end
 
 def find_pet_by_name(pet_shop, pet_name)
- results_of_search = []
+ # results_of_search = []
    for pet in pet_shop[:pets]
      if pet[:name] == pet_name
-        results_of_search.push(pet)
+        return pet
      end
    end
-   if results_of_search.empty?
-     return nil
-   else
-     return results_of_search
-   end
+   return nil
 end
 
 def remove_pet_by_name(pet_shop, pet_name)
@@ -88,8 +84,8 @@ def sell_pet_to_customer(pet_shop, pet, customer_number)
       customer_pet_count(customer_number)
     increase_pets_sold(pet_shop, 1)
       pets_sold(pet_shop)
-    # remove_customer_cash(customer_number, 900)
-    #   customer_cash(customer_number)
+    remove_customer_cash(customer_number, pet[:price])
+      customer_cash(customer_number)
   # end
 # end
 end
